@@ -1,5 +1,6 @@
 package com.afs.unittest;
 
+import com.afs.unittest.exception.UnexpectedProjectTypeException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +36,15 @@ class ExpenseServiceTest {
 
     @Test
     void should_return_other_expense_type_when_getExpenseCodeByProject_given_project_is_external_and_has_other_name() {
+        // given
+
+        // when
+
+        // then
+    }
+
+    @Test
+    void should_throw_unexpected_project_exception_when_getExpenseCodeByProject_given_project_is_invalid() {
         // given
 
         // when
