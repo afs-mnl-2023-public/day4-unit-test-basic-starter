@@ -1,17 +1,20 @@
 package com.afs.unittest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ExpenseServiceTest {
     @Test
     void should_return_internal_expense_type_when_getExpenseCodeByProject_given_internal_project() {
         // given
-
+        final var internalProject = new Project(ProjectType.INTERNAL, "Project Internal");
+        final var projectService = new ProjectService();
+        final var expenseService = new ExpenseService(projectService);
         // when
-
+        final var expenseCodeByProject = expenseService.getExpenseCodeByProject(internalProject);
         // then
+        Assertions.assertEquals(ExpenseType.INTERNAL_PROJECT_EXPENSE, expenseCodeByProject);
     }
-
     @Test
     void should_return_expense_type_A_when_getExpenseCodeByProject_given_project_is_external_and_name_is_project_A() {
         // given
